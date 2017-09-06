@@ -219,11 +219,10 @@ public class FuelCostCalculate extends javax.swing.JFrame {
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
         
-        Double fuelCost = routeLength * fuelPrice * avaregeFuelConsumption/100;
-        Double fuelCostPerPassenger = fuelCost/numberOfPassengers;
+        Calculate calculate = new Calculate(routeLength, fuelPrice, avaregeFuelConsumption, numberOfPassengers);
         
-        jTextField_FuelCost.setText("" + fuelCost);
-        jText_FuelCostPerPassenger.setText("" + fuelCostPerPassenger);
+        jTextField_FuelCost.setText("" + calculate.calculateFuelCost());
+        jText_FuelCostPerPassenger.setText("" + calculate.calculateFuelCostPerPassenger());
         
     }//GEN-LAST:event_jButton_CalculateActionPerformed
 

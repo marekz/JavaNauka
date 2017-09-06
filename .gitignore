@@ -12,3 +12,5 @@ build.xml
 .project
 /DOC
 .settings
+/FuelCostCalculator/nbproject/private/
+/FuelCostCalculator/build/

@@ -8,3 +8,6 @@ build.xml
 /test
 .metadata
 .recomenders
+.classpath
+.project
+/DOC

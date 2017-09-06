@@ -5,6 +5,8 @@
  */
 package fuelcostcalculator;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mzdybel
@@ -46,46 +48,51 @@ public class FuelCostCalculate extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTextField_FuelPrice.setText("jTextField1");
+        jTextField_FuelPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField_FuelPriceActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Fuel Price");
 
         jLabel3.setText("Average fuel consumption");
 
-        jTextField_AvarageFuelConsumption.setText("jTextField2");
-
         jLabel4.setText("Route length");
 
-        jTextField_RouteLength.setText("jTextField3");
         jTextField_RouteLength.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_RouteLengthActionPerformed(evt);
             }
         });
 
+        jSpinner_NumberPassenger.setModel(new javax.swing.SpinnerNumberModel(1, 1, 8, 1));
+
         jLabel5.setText("Number of passengers with driver");
 
         jButton_Calculate.setText("Calculate");
+        jButton_Calculate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CalculateActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Fuel cost");
 
         jLabel7.setText("Fuel cost per passenger");
 
-        jTextField_FuelCost.setText("jTextField4");
         jTextField_FuelCost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField_FuelCostActionPerformed(evt);
             }
         });
 
-        jText_FuelCostPerPassenger.setText("jTextField5");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel6)
@@ -95,23 +102,26 @@ public class FuelCostCalculate extends javax.swing.JFrame {
                         .addGap(31, 31, 31)
                         .addComponent(jLabel7)
                         .addGap(18, 18, 18)
-                        .addComponent(jText_FuelCostPerPassenger)))
+                        .addComponent(jText_FuelCostPerPassenger, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton_Calculate, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                                .addComponent(jTextField_FuelPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField_AvarageFuelConsumption, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextField_FuelPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField_AvarageFuelConsumption, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSpinner_NumberPassenger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                                .addComponent(jTextField_RouteLength, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTextField_RouteLength, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4))
                             .addGroup(layout.createSequentialGroup()
@@ -119,9 +129,6 @@ public class FuelCostCalculate extends javax.swing.JFrame {
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel3))
                                 .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(12, 12, 12))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton_Calculate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(12, 12, 12))))
         );
         layout.setVerticalGroup(
@@ -164,6 +171,61 @@ public class FuelCostCalculate extends javax.swing.JFrame {
     private void jTextField_FuelCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_FuelCostActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField_FuelCostActionPerformed
+
+    private void jTextField_FuelPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_FuelPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField_FuelPriceActionPerformed
+
+    private void jButton_CalculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CalculateActionPerformed
+        // TODO add your handling code here:
+        Double fuelPrice = 0.0;
+        Double routeLength = 0.0;
+        Double avaregeFuelConsumption = 0.0;
+        Integer numberOfPassengers = 0;
+
+        try {
+            if (!jTextField_FuelCost.getText().isEmpty()) {
+                fuelPrice = Double.parseDouble(jTextField_FuelPrice.getText());
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Wrong fuel price...",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        try {
+            if (!jTextField_RouteLength.getText().isEmpty()) {
+                routeLength = Double.parseDouble(jTextField_RouteLength.getText());
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Wrong route length...",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        try {
+            if (!jTextField_AvarageFuelConsumption.getText().isEmpty()) {
+                avaregeFuelConsumption = Double.parseDouble(jTextField_AvarageFuelConsumption.getText());
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Wrong fuel price",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        try {
+            if (jSpinner_NumberPassenger.getValue() != null) {
+                numberOfPassengers = (Integer) jSpinner_NumberPassenger.getValue();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Wrong number passengers", 
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        Double fuelCost = routeLength * fuelPrice * avaregeFuelConsumption/100;
+        Double fuelCostPerPassenger = fuelCost/numberOfPassengers;
+        
+        jTextField_FuelCost.setText("" + fuelCost);
+        jText_FuelCostPerPassenger.setText("" + fuelCostPerPassenger);
+        
+    }//GEN-LAST:event_jButton_CalculateActionPerformed
 
     /**
      * @param args the command line arguments

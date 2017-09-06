@@ -1,0 +1,14 @@
+.metadata
+.recomenders
+/bin
+/build
+build.xml
+/dist
+/nbproject
+/test
+.metadata
+.recomenders
+.classpath
+.project
+/DOC
+.settings

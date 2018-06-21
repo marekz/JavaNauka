@@ -15,3 +15,4 @@ build.xml
 /FuelCostCalculator/nbproject/private/
 /FuelCostCalculator/build/
 /UnitConverter/nbproject/private/
+*.class

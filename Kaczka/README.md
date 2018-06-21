@@ -1,1 +1,1 @@
-#Wzorzec Strategia
+# Wzorzec Strategia
